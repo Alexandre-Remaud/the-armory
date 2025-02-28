@@ -3,5 +3,9 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <RouterView />
+  <section>
+    <div class="container">
+      <RouterView :key="$route.fullPath" />
+    </div>
+  </section>
 </template>
