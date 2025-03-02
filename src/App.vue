@@ -1,10 +1,12 @@
 <script setup>
 import { RouterView } from 'vue-router'
+import MainMenu from '@/components/MainMenu.vue'
 </script>
 
 <template>
   <section>
-    <div class="container">
+    <MainMenu />
+    <div>
       <RouterView :key="$route.fullPath" />
     </div>
   </section>

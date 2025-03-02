@@ -13,6 +13,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@heroicons/vue": "^2.2.0",
     "@tailwindcss/vite": "^4.0.9",
     "autoprefixer": "^10.4.20",
     "axios": "^1.7.9",
