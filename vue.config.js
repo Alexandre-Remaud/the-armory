@@ -1,6 +1,5 @@
 export default {
-    devServer: {
-      proxy: 'http://localhost:5173'
-    }
-  }
-  
+  devServer: {
+    proxy: 'http://localhost:5173',
+  },
+}
