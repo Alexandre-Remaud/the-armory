@@ -1,7 +1,7 @@
 <script setup>
 /**
- * Composant pour afficher une page 404 personnalisée
- * @prop {string} resource - Le type de ressource non trouvée (par défaut: 'page')
+ * Component to display a custom 404 page
+ * @prop {string} resource - Type of resource not found (default: 'page')
  */
 import { defineProps } from 'vue'
 
@@ -16,9 +16,9 @@ defineProps({
 
 <template>
   <div class="not-found-container">
-    <h1 class="font-medium text-red-500 text-2xl">Oups !</h1>
-    <h3 class="my-1">La {{ resource }} que vous recherchez n'existe pas.</h3>
-    <router-link class="text-blue-500" :to="{ name: 'Home' }"> Retour à l'accueil </router-link>
+    <h1 class="font-medium text-red-500 text-2xl">Oops!</h1>
+    <h3 class="my-1">The {{ resource }} you are looking for does not exist.</h3>
+    <router-link class="text-blue-500" :to="{ name: 'Home' }">Back to home</router-link>
   </div>
 </template>
 
