@@ -23,9 +23,11 @@ export default [
   },
   skipFormatting,
   {
-    env: {
-      node: true,
-      es6: true,
+    languageOptions: {
+      globals: {
+        node: true,
+        es6: true,
+      },
     },
   },
 ]

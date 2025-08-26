@@ -8,4 +8,5 @@ export const config = {
   clientSecret: process.env.CLIENT_SECRET,
   callbackUrl: process.env.CALLBACK_URL,
   baseUrl: process.env.BASE_URL,
+  sessionSecret: process.env.SESSION_SECRET,
 }
