@@ -1,36 +1,41 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import logo from '@/assets/images/logo.png'
-
-const navigation = [{ name: 'Home', href: '/', current: true }]
 </script>
 
 <template>
-  <nav class="bg-gray-800">
-    <div class="mx-auto max-w-2xl px-2 sm:px-6 lg:px-8">
-      <div class="relative flex h-16 items-center justify-between">
-        <!-- Desktop menu -->
-        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-          <div class="flex shrink-0 items-center">
-            <RouterLink to="/"><img class="h-8 w-auto" :src="logo" alt="The armory" /></RouterLink>
-          </div>
-          <div class="hidden sm:ml-6 sm:block">
-            <div class="flex space-x-4">
-              <a
-                v-for="item in navigation"
-                :key="item.name"
-                :href="item.href"
-                :class="[
-                  item.current
-                    ? 'bg-gray-900 text-white'
-                    : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                  'rounded-md px-3 py-2 text-sm font-medium',
-                ]"
-                :aria-current="item.current ? 'page' : undefined"
-                >{{ item.name }}</a
-              >
-            </div>
-          </div>
+  <nav class="bg-slate-800/80 backdrop-blur-sm border-b border-slate-700/50 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <RouterLink
+            to="/"
+            class="flex items-center space-x-3 group transition-all duration-200 hover:scale-105"
+          >
+            <img class="h-10 w-auto" :src="logo" alt="The Armory" />
+            <span
+              class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors duration-200"
+            >
+              The Armory
+            </span>
+          </RouterLink>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button
+            class="text-slate-300 hover:text-white p-2 rounded-lg hover:bg-slate-700/50 transition-colors duration-200"
+          >
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
