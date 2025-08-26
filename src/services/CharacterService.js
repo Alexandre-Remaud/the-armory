@@ -16,6 +16,18 @@ class CharacterService {
       `/character/${encodeURIComponent(realmSlug)}/${encodeURIComponent(characterName)}`,
     )
   }
+
+  /**
+   * Get character media
+   * @param {string} realmSlug
+   * @param {string} characterName
+   * @returns {Promise<Object>}
+   */
+  getCharacterMedia(realmSlug, characterName) {
+    return apiClient.get(
+      `/character/${encodeURIComponent(realmSlug)}/${encodeURIComponent(characterName)}/media`,
+    )
+  }
 }
 
 export default new CharacterService()

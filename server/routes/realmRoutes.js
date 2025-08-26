@@ -1,6 +1,6 @@
 import express from 'express'
 import { getRealms } from '../services/realmService.js'
-import { getCharacter } from '../services/characterService.js'
+import { getCharacter, getCharacterMedia } from '../services/characterService.js'
 
 const router = express.Router()
 
@@ -45,6 +45,21 @@ router.get('/character/:realmSlug/:characterName', async (req, res, next) => {
     res.status(200).json({ success: true, data })
   } catch (error) {
     next({ status: 500, message: 'Failed to fetch character', error: error.message })
+  }
+})
+
+/**
+ * @route GET /character/:realmSlug/:characterName/media
+ * @description Get a character media
+ * @access Public
+ */
+router.get('/character/:realmSlug/:characterName/media', async (req, res, next) => {
+  try {
+    const { realmSlug, characterName } = req.params
+    const data = await getCharacterMedia(realmSlug, characterName)
+    res.status(200).json({ success: true, data })
+  } catch (error) {
+    next({ status: 500, message: 'Failed to fetch character media', error: error.message })
   }
 })
 
